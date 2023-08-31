@@ -1,0 +1,27 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "package.json",
+        "use": "@vercel/node",
+        "config": {
+          "outputDirectory": "dist"
+        }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/$1"
+      }
+    ],
+    "env": {
+      "SQL_HOST": "@sql_host",
+      "SQL_PORT": "@sql_port",
+      "SQL_USER": "@sql_user",
+      "SQL_PASSWORD": "@sql_password",
+      "SQL_DATABASE": "@sql_database",
+      "CLIENT_ORIGIN_URL": "@client_origin_url"
+    }
+  }
+  
